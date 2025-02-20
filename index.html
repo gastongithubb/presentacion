@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto BO - Presentación Completa</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --konecta-blue: #2800C8;
+            --navy-blue: #0F0F72;
+            --sky-blue: #A6B7FF;
+            --yellow: #F0FA00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--navy-blue);
+            color: white;
+        }
+        
+        .slide {
+            height: 100vh;
+            display: none;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .active {
+            display: flex;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--yellow);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--sky-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .card {
+            background: rgba(166, 183, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            width: 100%;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+        
+        button {
+            background: var(--konecta-blue);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: var(--yellow);
+            color: var(--navy-blue);
+        }
+        
+        .highlight {
+            color: var(--yellow);
+            font-weight: bold;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--yellow);
+            transition: width 0.3s ease;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 1rem;
+            border-left: 3px solid var(--yellow);
+            margin-left: 20px;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            width: 13px;
+            height: 13px;
+            background: var(--yellow);
+            border-radius: 50%;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Slide 1: Introducción -->
+    <div class="slide active animate__animated animate__fadeIn">
+        <h1>Proyecto BO</h1>
+        <div class="card content">
+            <h2>Transformando la Experiencia del Cliente</h2>
+            <p>Una iniciativa para optimizar la gestión de casos y mejorar la comunicación interdepartamental</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Visión -->
+    <div class="slide animate__animated">
+        <h2>Nuestra Visión</h2>
+        <div class="card content">
+            <p>🎯 Unificación y alineamiento comunicativo interáreas</p>
+            <p>⚡ Agilización de tiempos de resolución</p>
+            <p>📱 Contacto optimizado con Asociados</p>
+            <p>🔄 Minimización de casos en bandeja</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Objetivos y Necesidades -->
+    <div class="slide animate__animated">
+        <h2>Objetivos y Necesidades</h2>
+        <div class="grid-cards content">
+            <div class="card">
+                <h3 style="color: var(--yellow)">Objetivos</h3>
+                <p>✨ Seguimiento detallado de gestiones</p>
+                <p>📊 Control de bandeja a nivel cuenta</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--yellow)">Necesidades</h3>
+                <p>⏱️ Mejora de tiempos operativos</p>
+                <p>🔄 Corrección de desvíos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Beneficios -->
+    <div class="slide animate__animated">
+        <h2>Beneficios del Proyecto</h2>
+        <div class="grid-cards content">
+            <div class="card">
+                <p>⚡ Resolución más ágil</p>
+                <p>👥 Mejor comunicación entre áreas</p>
+            </div>
+            <div class="card">
+                <p>🚀 Innovación en gestión diaria</p>
+                <p>📈 Mejora en NPS</p>
+            </div>
+            <div class="card">
+                <p>🎯 Seguimiento individual</p>
+                <p>🤝 Trabajo en equipo efectivo</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Proceso de Implementación -->
+    <div class="slide animate__animated">
+        <h2>Proceso de Implementación</h2>
+        <div class="timeline content">
+            <div class="timeline-item">
+                <h3 style="color: var(--yellow)">Fase 1: Análisis Inicial</h3>
+                <p>Evaluación de métricas y casos actuales</p>
+            </div>
+            <div class="timeline-item">
+                <h3 style="color: var(--yellow)">Fase 2: Actualización</h3>
+                <p>Implementación de procesos y sistemas</p>
+            </div>
+            <div class="timeline-item">
+                <h3 style="color: var(--yellow)">Fase 3: Optimización</h3>
+                <p>Mejora continua y seguimiento</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Alcance del Proyecto -->
+    <div class="slide animate__animated">
+        <h2>Alcance del Proyecto</h2>
+        <div class="card content">
+            <p>Primera Etapa:</p>
+            <p>🧹 Limpieza de bandeja de casos</p>
+            <p>📊 Gestión de casos antiguos</p>
+            <br>
+            <p>Segunda Etapa:</p>
+            <p>🎯 Priorización de trabajo</p>
+            <p>🤝 Reconexión con asociados</p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Desafíos y Limitaciones -->
+    <div class="slide animate__animated">
+        <h2>Desafíos a Superar</h2>
+        <div class="grid-cards content">
+            <div class="card">
+                <p>📊 Experiencia en análisis</p>
+                <p>Desarrollo de expertise en gestión de casos</p>
+            </div>
+            <div class="card">
+                <p>🔄 Procesos</p>
+                <p>Optimización de devoluciones y mejoras</p>
+            </div>
+            <div class="card">
+                <p>🔑 Permisos</p>
+                <p>Actualización de perfiles y accesos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Hitos del Proyecto -->
+    <div class="slide animate__animated">
+        <h2>Hitos Principales</h2>
+        <div class="content">
+            <div class="card">
+                <h3 style="color: var(--yellow)">Corrección de Desvíos</h3>
+                <p>Optimización de procesos y gestiones</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--yellow)">Mejora en Relaciones</h3>
+                <p>Fortalecimiento de vínculos interdepartamentales</p>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--yellow)">Automatización</h3>
+                <p>Implementación de procesos automáticos e informes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Métricas de Éxito -->
+    <div class="slide animate__animated">
+        <h2>Métricas de Éxito</h2>
+        <div class="grid-cards content">
+            <div class="card metric-card">
+                <div class="metric-number">↓40%</div>
+                <p>Reducción en tiempo de respuesta</p>
+            </div>
+            <div class="card metric-card">
+                <div class="metric-number">↑85%</div>
+                <p>Satisfacción del cliente</p>
+            </div>
+            <div class="card metric-card">
+                <div class="metric-number">↑60%</div>
+                <p>Eficiencia operativa</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Conclusión -->
+    <div class="slide animate__animated">
+        <h2>¡Gracias!</h2>
+        <div class="card content">
+            <h3 style="color: var(--yellow)">Transformando Juntos</h3>
+            <p>Un proyecto para mejorar la experiencia de nuestros asociados y optimizar nuestros procesos internos</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="prevSlide()">← Anterior</button>
+        <button onclick="nextSlide()">Siguiente →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        
+        function updateProgressBar() {
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'animate__fadeIn', 'animate__fadeOut');
+            });
+            
+            slides[index].classList.add('active', 'animate__fadeIn');
+            updateProgressBar();
+        }
+        
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+        
+        updateProgressBar();
+    </script>
+</body>
+</html>
