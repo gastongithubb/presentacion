@@ -5,317 +5,323 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto BO - Presentación Completa</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --konecta-blue: #2800C8;
-            --navy-blue: #0F0F72;
-            --sky-blue: #A6B7FF;
-            --yellow: #F0FA00;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- JavaScript Functions -->
+<script>
+    function openPopup(id) {
+        document.getElementById(id).classList.remove('hidden');
+    }
+    function closePopup(id) {
+        document.getElementById(id).classList.add('hidden');
+    }
+</script>
+    <!-- Tailwind Functions -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'konecta-blue': '#2800C8',
+                        'navy-blue': '#0F0F72',
+                        'sky-blue': '#A6B7FF',
+                        'accent-yellow': '#F0FA00'
+                    }
+                }
+            }
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: var(--navy-blue);
-            color: white;
-        }
-        
-        .slide {
-            height: 100vh;
-            display: none;
-            padding: 2rem;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .active {
-            display: flex;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            color: var(--yellow);
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            color: var(--sky-blue);
-            margin-bottom: 1.5rem;
-        }
-        
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        
-        .card {
-            background: rgba(166, 183, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            width: 100%;
-        }
-        
-        .navigation {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            z-index: 100;
-        }
-        
-        button {
-            background: var(--konecta-blue);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        button:hover {
-            background: var(--yellow);
-            color: var(--navy-blue);
-        }
-        
-        .highlight {
-            color: var(--yellow);
-            font-weight: bold;
-        }
-        
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 5px;
-            background: var(--yellow);
-            transition: width 0.3s ease;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 1rem;
-            border-left: 3px solid var(--yellow);
-            margin-left: 20px;
-            position: relative;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            width: 13px;
-            height: 13px;
-            background: var(--yellow);
-            border-radius: 50%;
-        }
-
-        .metric-card {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .metric-number {
-            font-size: 2.5rem;
-            color: var(--yellow);
-            margin-bottom: 0.5rem;
-        }
-    </style>
+    </script>
 </head>
-<body>
-    <div class="progress-bar" id="progressBar"></div>
+<body class="bg-navy-blue text-white font-sans">
+    <div id="progressBar" class="fixed top-0 left-0 h-1.5 bg-accent-yellow transition-all duration-300"></div>
     
     <!-- Slide 1: Introducción -->
-    <div class="slide active animate__animated animate__fadeIn">
-        <h1>Proyecto BO</h1>
-        <div class="card content">
-            <h2>Transformando la Experiencia del Cliente</h2>
-            <p>Una iniciativa para optimizar la gestión de casos y mejorar la comunicación interdepartamental</p>
+    <div class="slide min-h-screen p-8 flex items-center justify-center flex-col text-center active animate__animated animate__fadeIn">
+        <h1 class="text-6xl mb-8 text-accent-yellow">BackOffice</h1>
+        <div class="max-w-4xl mx-auto text-lg bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <h2 class="text-4xl text-sky-blue mb-6">Transformando la Experiencia de nuestros Asociados</h2>
+            <p class="mb-8">Una iniciativa para optimizar la gestión de casos y mejorar la comunicación interdepartamental</p>
+            <div class="mt-6 text-xl space-y-2">
+                <p class="text-accent-yellow font-bold">Emilce Johanna Contreras</p>
+                <p class="mb-4">Líder de Operaciones</p>
+                <p class="text-accent-yellow font-bold">Carla Ariela Chavez</p>
+                <p>Gerenta de Operaciones SanCor Salud - Konecta</p>
+            </div>
         </div>
     </div>
 
     <!-- Slide 2: Visión -->
-    <div class="slide animate__animated">
-        <h2>Nuestra Visión</h2>
-        <div class="card content">
-            <p>🎯 Unificación y alineamiento comunicativo interáreas</p>
-            <p>⚡ Agilización de tiempos de resolución</p>
-            <p>📱 Contacto optimizado con Asociados</p>
-            <p>🔄 Minimización de casos en bandeja</p>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Nuestra Visión</h2>
+        <div class="flex space-x-6">
+            <div
+                class="text-lg bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="inline w-6 h-6 mr-2 lucide lucide-group">
+                        <path d="M3 7V5c0-1.1.9-2 2-2h2" />
+                        <path d="M17 3h2c1.1 0 2 .9 2 2v2" />
+                        <path d="M21 17v2c0 1.1-.9 2-2 2h-2" />
+                        <path d="M7 21H5c-1.1 0-2-.9-2-2v-2" />
+                        <rect width="7" height="5" x="7" y="7" rx="1" />
+                        <rect width="7" height="5" x="10" y="12" rx="1" />
+                    </svg>Unificación y alineamiento comunicativo entre las distintas áreas</p>
+                <button onclick="openPopup('popup1')"
+                    class="bg-blue-500 bg-opacity-40 hover:bg-blue-700 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded rounded-xl"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-fading-plus">
+                        <path d="M12 2a10 10 0 0 1 7.38 16.75" />
+                        <path d="M12 8v8" />
+                        <path d="M16 12H8" />
+                        <path d="M2.5 8.875a10 10 0 0 0-.5 3" />
+                        <path d="M2.83 16a10 10 0 0 0 2.43 3.4" />
+                        <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
+                        <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
+                    </svg></button>
+            </div>
+            <div
+                class="text-lg bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="inline w-6 h-6 mr-2 lucide lucide-trending-up">
+                        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                        <polyline points="16 7 22 7 22 13" />
+                    </svg>Optimización de tiempos</p>
+                <button onclick="openPopup('popup2')"
+                    class="bg-blue-500 bg-opacity-40 hover:bg-blue-700 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded rounded-xl"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-fading-plus">
+                        <path d="M12 2a10 10 0 0 1 7.38 16.75" />
+                        <path d="M12 8v8" />
+                        <path d="M16 12H8" />
+                        <path d="M2.5 8.875a10 10 0 0 0-.5 3" />
+                        <path d="M2.83 16a10 10 0 0 0 2.43 3.4" />
+                        <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
+                        <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
+                    </svg></button>
+            </div>
+            <div
+                class="text-lg bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="inline w-6 h-6 mr-2 lucide lucide-messages-square">
+                        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z" />
+                        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+                    </svg>Canales de Comunicación Especializados</p>
+                <button onclick="openPopup('popup3')"
+                    class="bg-blue-500 bg-opacity-40 hover:bg-blue-700 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded rounded-xl"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-fading-plus">
+                        <path d="M12 2a10 10 0 0 1 7.38 16.75" />
+                        <path d="M12 8v8" />
+                        <path d="M16 12H8" />
+                        <path d="M2.5 8.875a10 10 0 0 0-.5 3" />
+                        <path d="M2.83 16a10 10 0 0 0 2.43 3.4" />
+                        <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
+                        <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
+                    </svg></button>
+            </div>
+            <div
+                class="text-lg bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="inline w-6 h-6 mr-2 lucide lucide-inbox">
+                        <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
+                        <path
+                            d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+                    </svg>Gestión de casos en bandeja</p>
+                <button onclick="openPopup('popup4')"
+                    class="bg-blue-500 bg-opacity-40 hover:bg-blue-700 hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded rounded-xl"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-fading-plus">
+                        <path d="M12 2a10 10 0 0 1 7.38 16.75" />
+                        <path d="M12 8v8" />
+                        <path d="M16 12H8" />
+                        <path d="M2.5 8.875a10 10 0 0 0-.5 3" />
+                        <path d="M2.83 16a10 10 0 0 0 2.43 3.4" />
+                        <path d="M4.636 5.235a10 10 0 0 1 .891-.857" />
+                        <path d="M8.644 21.42a10 10 0 0 0 7.631-.38" />
+                    </svg></button>
+            </div>
         </div>
     </div>
 
+<!-- Popups -->
+<div id="popup1" class="fixed inset-0 bg-gray-700 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h3 class="text-xl text-black font-bold mb-4">Unificación y alineamiento comunicativo entre las distintas áreas</h3>
+        <p class="text-black">Contenido del pop-up 1.</p>
+        <button onclick="closePopup('popup1')" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cerrar</button>
+    </div>
+</div>
+
+<div id="popup2" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h3 class="text-xl font-bold mb-4">Optimización de tiempos</h3>
+        <p>Contenido del pop-up 2.</p>
+        <button onclick="closePopup('popup2')" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cerrar</button>
+    </div>
+</div>
+
+<div id="popup3" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h3 class="text-xl font-bold mb-4">Canales de Comunicación Especializados</h3>
+        <p>Contenido del pop-up 3.</p>
+        <button onclick="closePopup('popup3')" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cerrar</button>
+    </div>
+</div>
+
+<div id="popup4" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h3 class="text-xl font-bold mb-4">Gestión de casos en bandeja</h3>
+        <p>Contenido del pop-up 4.</p>
+        <button onclick="closePopup('popup4')" class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cerrar</button>
+    </div>
+</div>
+
     <!-- Slide 3: Objetivos y Necesidades -->
-    <div class="slide animate__animated">
-        <h2>Objetivos y Necesidades</h2>
-        <div class="grid-cards content">
-            <div class="card">
-                <h3 style="color: var(--yellow)">Objetivos</h3>
-                <p>✨ Seguimiento detallado de gestiones</p>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Objetivos y Necesidades</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl w-full">
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <h3 class="text-2xl text-accent-yellow mb-4">Objetivos</h3>
+                <p class="mb-3">✨ Seguimiento detallado de gestiones</p>
                 <p>📊 Control de bandeja a nivel cuenta</p>
             </div>
-            <div class="card">
-                <h3 style="color: var(--yellow)">Necesidades</h3>
-                <p>⏱️ Mejora de tiempos operativos</p>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <h3 class="text-2xl text-accent-yellow mb-4">Necesidades</h3>
+                <p class="mb-3">⏱️ Mejora de tiempos operativos</p>
                 <p>🔄 Corrección de desvíos</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 4: Beneficios -->
-    <div class="slide animate__animated">
-        <h2>Beneficios del Proyecto</h2>
-        <div class="grid-cards content">
-            <div class="card">
-                <p>⚡ Resolución más ágil</p>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Beneficios del Proyecto</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl w-full">
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-3">⚡ Resolución más ágil</p>
                 <p>👥 Mejor comunicación entre áreas</p>
             </div>
-            <div class="card">
-                <p>🚀 Innovación en gestión diaria</p>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-3">🚀 Innovación en gestión diaria</p>
                 <p>📈 Mejora en NPS</p>
             </div>
-            <div class="card">
-                <p>🎯 Seguimiento individual</p>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="mb-3">🎯 Seguimiento individual</p>
                 <p>🤝 Trabajo en equipo efectivo</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 5: Proceso de Implementación -->
-    <div class="slide animate__animated">
-        <h2>Proceso de Implementación</h2>
-        <div class="timeline content">
-            <div class="timeline-item">
-                <h3 style="color: var(--yellow)">Fase 1: Análisis Inicial</h3>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Proceso de Implementación</h2>
+        <div class="max-w-4xl w-full">
+            <div class="pl-6 border-l-4 border-accent-yellow mb-6 relative">
+                <div class="absolute w-3 h-3 bg-accent-yellow rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                <h3 class="text-2xl text-accent-yellow mb-2">Fase 1: Análisis Inicial</h3>
                 <p>Evaluación de métricas y casos actuales</p>
             </div>
-            <div class="timeline-item">
-                <h3 style="color: var(--yellow)">Fase 2: Actualización</h3>
+            <div class="pl-6 border-l-4 border-accent-yellow mb-6 relative">
+                <div class="absolute w-3 h-3 bg-accent-yellow rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                <h3 class="text-2xl text-accent-yellow mb-2">Fase 2: Actualización</h3>
                 <p>Implementación de procesos y sistemas</p>
             </div>
-            <div class="timeline-item">
-                <h3 style="color: var(--yellow)">Fase 3: Optimización</h3>
+            <div class="pl-6 border-l-4 border-accent-yellow mb-6 relative">
+                <div class="absolute w-3 h-3 bg-accent-yellow rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                <h3 class="text-2xl text-accent-yellow mb-2">Fase 3: Optimización</h3>
                 <p>Mejora continua y seguimiento</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 6: Alcance del Proyecto -->
-    <div class="slide animate__animated">
-        <h2>Alcance del Proyecto</h2>
-        <div class="card content">
-            <p>Primera Etapa:</p>
-            <p>🧹 Limpieza de bandeja de casos</p>
-            <p>📊 Gestión de casos antiguos</p>
-            <br>
-            <p>Segunda Etapa:</p>
-            <p>🎯 Priorización de trabajo</p>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Alcance del Proyecto</h2>
+        <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1 max-w-4xl">
+            <p class="text-xl mb-4">Primera Etapa:</p>
+            <p class="mb-3">🧹 Limpieza de bandeja de casos</p>
+            <p class="mb-6">📊 Gestión de casos antiguos</p>
+            <p class="text-xl mb-4">Segunda Etapa:</p>
+            <p class="mb-3">🎯 Priorización de trabajo</p>
             <p>🤝 Reconexión con asociados</p>
         </div>
     </div>
 
     <!-- Slide 7: Desafíos y Limitaciones -->
-    <div class="slide animate__animated">
-        <h2>Desafíos a Superar</h2>
-        <div class="grid-cards content">
-            <div class="card">
-                <p>📊 Experiencia en análisis</p>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Desafíos a Superar</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl w-full">
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="text-xl mb-3">📊 Experiencia en análisis</p>
                 <p>Desarrollo de expertise en gestión de casos</p>
             </div>
-            <div class="card">
-                <p>🔄 Procesos</p>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="text-xl mb-3">🔄 Procesos</p>
                 <p>Optimización de devoluciones y mejoras</p>
             </div>
-            <div class="card">
-                <p>🔑 Permisos</p>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <p class="text-xl mb-3">🔑 Permisos</p>
                 <p>Actualización de perfiles y accesos</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 8: Hitos del Proyecto -->
-    <div class="slide animate__animated">
-        <h2>Hitos Principales</h2>
-        <div class="content">
-            <div class="card">
-                <h3 style="color: var(--yellow)">Corrección de Desvíos</h3>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Hitos Principales</h2>
+        <div class="max-w-4xl w-full space-y-4">
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <h3 class="text-2xl text-accent-yellow mb-3">Corrección de Desvíos</h3>
                 <p>Optimización de procesos y gestiones</p>
             </div>
-            <div class="card">
-                <h3 style="color: var(--yellow)">Mejora en Relaciones</h3>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <h3 class="text-2xl text-accent-yellow mb-3">Mejora en Relaciones</h3>
                 <p>Fortalecimiento de vínculos interdepartamentales</p>
             </div>
-            <div class="card">
-                <h3 style="color: var(--yellow)">Automatización</h3>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <h3 class="text-2xl text-accent-yellow mb-3">Automatización</h3>
                 <p>Implementación de procesos automáticos e informes</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 9: Métricas de Éxito -->
-    <div class="slide animate__animated">
-        <h2>Métricas de Éxito</h2>
-        <div class="grid-cards content">
-            <div class="card metric-card">
-                <div class="metric-number">↓40%</div>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">Métricas de Éxito</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl w-full">
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <div class="text-5xl text-accent-yellow mb-4">↓40%</div>
                 <p>Reducción en tiempo de respuesta</p>
             </div>
-            <div class="card metric-card">
-                <div class="metric-number">↑85%</div>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <div class="text-5xl text-accent-yellow mb-4">↑85%</div>
                 <p>Satisfacción del cliente</p>
             </div>
-            <div class="card metric-card">
-                <div class="metric-number">↑60%</div>
+            <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1">
+                <div class="text-5xl text-accent-yellow mb-4">↑60%</div>
                 <p>Eficiencia operativa</p>
             </div>
         </div>
     </div>
 
     <!-- Slide 10: Conclusión -->
-    <div class="slide animate__animated">
-        <h2>¡Gracias!</h2>
-        <div class="card content">
-            <h3 style="color: var(--yellow)">Transformando Juntos</h3>
+    <div class="slide min-h-screen p-8 hidden items-center justify-center flex-col text-center animate__animated">
+        <h2 class="text-4xl text-sky-blue mb-6">¡Gracias!</h2>
+        <div class="bg-sky-blue/10 p-8 rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1 max-w-4xl">
+            <h3 class="text-2xl text-accent-yellow mb-4">Transformando Juntos</h3>
             <p>Un proyecto para mejorar la experiencia de nuestros asociados y optimizar nuestros procesos internos</p>
         </div>
     </div>
 
-    <div class="navigation">
-        <button onclick="prevSlide()">← Anterior</button>
-        <button onclick="nextSlide()">Siguiente →</button>
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex gap-4 z-50">
+        <button onclick="prevSlide()" class="bg-konecta-blue text-white px-8 py-4 rounded-full cursor-pointer text-base transition-all duration-300 hover:bg-accent-yellow hover:text-navy-blue">← Anterior</button>
+        <button onclick="nextSlide()" class="bg-konecta-blue text-white px-8 py-4 rounded-full cursor-pointer text-base transition-all duration-300 hover:bg-accent-yellow hover:text-navy-blue">Siguiente →</button>
     </div>
 
     <script>
@@ -331,8 +337,10 @@
         function showSlide(index) {
             slides.forEach(slide => {
                 slide.classList.remove('active', 'animate__fadeIn', 'animate__fadeOut');
+                slide.classList.add('hidden');
             });
             
+            slides[index].classList.remove('hidden');
             slides[index].classList.add('active', 'animate__fadeIn');
             updateProgressBar();
         }
